@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Guia de Atividades para Foco e Coordenação Infantil</title>
+  <meta name="description" content="Mais de 250 atividades prontas para desenvolver o foco e a coordenação do seu filho em apenas 10 minutos por dia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul: #1565C0;
+      --azul-claro: #1E88E5;
+      --azul-suave: #E3F2FD;
+      --laranja-btn: #FF6B00;
+      --laranja-claro: #FF8F00;
+      --cinza-claro: #F5F7FA;
+      --cinza-texto: #444;
+      --verde: #2E7D32;
+      --verde-claro: #E8F5E9;
+      --texto: #1A1A2E;
+      --radius: 14px;
+      --sombra: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #fff;
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    /* BOTÃO CTA */
+    .btn-cta {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--laranja-btn), var(--laranja-claro));
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+      padding: 18px 24px;
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(255,109,0,0.45);
+      letter-spacing: 0.02em;
+      transition: transform 0.18s, box-shadow 0.18s;
+      line-height: 1.3;
+    }
+    .btn-cta:active { transform: scale(0.97); }
+    .btn-cta .btn-sub {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      opacity: 0.9;
+      margin-top: 3px;
+    }
+    .pulse { animation: pulse 1.8s infinite; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(255,109,0,0.45); }
+      50% { box-shadow: 0 6px 36px rgba(255,109,0,0.70); }
+    }
+
+    /* HERO */
+    #hero {
+      background: linear-gradient(160deg, #0D47A1 0%, #1565C0 50%, #1976D2 100%);
+      color: #fff;
+      padding: 48px 20px 44px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 240px; height: 240px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 200px; height: 200px;
+      background: rgba(255,109,0,0.12);
+      border-radius: 50%;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.30);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+    }
+    #hero h1 {
+      font-size: clamp(1.55rem, 5vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    #hero h1 span { color: #FFD54F; }
+    #hero h2 {
+      font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+      font-weight: 600;
+      line-height: 1.65;
+      opacity: 0.93;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      margin: 0 0 18px;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .hero-arrow {
+      font-size: 0.82rem;
+      opacity: 0.75;
+      margin-top: 14px;
+      display: block;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* SEÇÕES */
+    section { padding: 52px 20px; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--laranja-btn);
+      background: #FFF3E0;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+    h2.title {
+      font-size: clamp(1.45rem, 5vw, 2rem);
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--texto);
+      margin-bottom: 10px;
+    }
+    h2.title span { color: var(--azul); }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--cinza-texto);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* PROBLEMA */
+    #problema {
+      background: var(--cinza-claro);
+      text-align: center;
+    }
+    .dores-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 28px 0;
+    }
+    .dor-card {
+      background: #fff;
+      border-left: 4px solid var(--azul);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-align: left;
+      box-shadow: var(--sombra);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .dor-card.visible { opacity: 1; transform: none; }
+    .dor-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .dor-card p { font-size: 0.97rem; font-weight: 600; color: var(--texto); line-height: 1.5; }
+    .dor-card small { display: block; font-size: 0.83rem; font-weight: 400; color: var(--cinza-texto); margin-top: 4px; }
+
+    .frase-gancho {
+      background: linear-gradient(135deg, #0D47A1, #1565C0);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      margin-top: 28px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.55;
+      text-align: center;
+    }
+    .frase-gancho span { color: #FFD54F; }
+
+    /* SOLUÇÃO */
+    #solucao { background: #fff; text-align: center; }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 28px 0;
+    }
+    .step {
+      background: var(--azul-suave);
+      border-radius: var(--radius);
+      padding: 22px 16px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .step.visible { opacity: 1; transform: none; }
+    .step .step-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .step strong { display: block; font-size: 0.92rem; font-weight: 800; color: var(--azul); margin-bottom: 6px; }
+    .step p { font-size: 0.83rem; color: var(--cinza-texto); line-height: 1.5; }
+
+    /* PROVA SOCIAL */
+    #prova { background: var(--cinza-claro); text-align: center; }
+
+    .numeros {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0 32px;
+    }
+    .num-item {
+      background: linear-gradient(135deg, #0D47A1, #1565C0);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 20px 14px;
+      text-align: center;
+    }
+    .num-item strong { display: block; font-size: 1.8rem; font-weight: 900; color: #FFD54F; }
+    .num-item span { font-size: 0.78rem; font-weight: 600; opacity: 0.9; }
+
+    .dep-video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      margin: 0 0 12px;
+    }
+    .dep-video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .dep-video-label {
+      font-size: 0.82rem;
+      color: var(--cinza-texto);
+      text-align: center;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    /* OFERTA */
+    #oferta {
+      background: linear-gradient(160deg, #0D47A1, #1565C0);
+      color: #fff;
+      text-align: center;
+    }
+    #oferta h2.title { color: #fff; }
+    #oferta h2.title span { color: #FFD54F; }
+    #oferta .subtitle { color: rgba(255,255,255,0.85); }
+
+    .produto-img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: var(--radius);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+      margin: 0 auto 28px;
+      display: block;
+    }
+
+    .incluso-list {
+      list-style: none;
+      text-align: left;
+      margin: 24px 0;
+      display: grid;
+      gap: 12px;
+    }
+    .incluso-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255,255,255,0.10);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+    .incluso-list li .check { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    .preco-box {
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      margin: 28px 0;
+    }
+    .preco-de {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .preco-por {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #FFD54F;
+    }
+    .preco-parcela {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-top: 8px;
+    }
+    .urgencia {
+      background: rgba(255,109,0,0.2);
+      border: 1px solid rgba(255,109,0,0.5);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #FFD54F;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .garantia {
+      background: var(--verde-claro);
+      border: 2px solid var(--verde);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      margin-top: 24px;
+      text-align: center;
+      color: var(--verde);
+    }
+    .garantia .g-icon { font-size: 2.5rem; display: block; margin-bottom: 8px; }
+    .garantia strong { display: block; font-size: 1.05rem; font-weight: 900; margin-bottom: 6px; }
+    .garantia p { font-size: 0.88rem; line-height: 1.55; color: #2E7D32; }
+
+    .selos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .selo {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* CTA FINAL */
+    #cta-final {
+      background: #fff;
+      text-align: center;
+    }
+    #cta-final h2.title { color: var(--texto); }
+    #cta-final h2.title span { color: var(--azul); }
+    .cta-frase {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cinza-texto);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .cta-frase strong { color: var(--texto); }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      font-size: 0.75rem;
+      padding: 24px 20px;
+      line-height: 1.7;
+    }
+
+    /* FADE-IN */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (min-width: 640px) {
+      .dores-grid { grid-template-columns: 1fr 1fr; }
+      .numeros { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BLOCO 1 · HERO -->
+<section id="hero">
+  <div class="hero-badge">✨ +20.000 famílias já transformaram a rotina</div>
+
+  <h1>Guia de Atividades para<br><span>FOCO E COORDENAÇÃO</span><br>Infantil</h1>
+
+  <h2>O Guia contém <strong>+250 dinâmicas prontas</strong> para coordenação motora fina e grossa que ajudam seu filho a desenvolver atenção, organização e foco de forma rápida e natural, em apenas <strong>10 minutos por dia</strong>, sem gritos, sem brigas e sem estresse.</h2>
+
+  <div class="video-wrap">
+    <iframe src="https://player.vimeo.com/video/1181423029?h=c27696bd8c&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
+  </div>
+
+  <span class="hero-arrow">▼ Continue lendo para entender como funciona</span>
+</section>
+
+
+<!-- BLOCO 2 · PROBLEMA -->
+<section id="problema">
+  <div class="section-label">Você se identifica?</div>
+  <h2 class="title fade-in">Você já se sentiu<br><span>assim com seu filho?</span></h2>
+  <p class="subtitle fade-in">Se algum desses pensamentos já passou pela sua cabeça, saiba que você não está sozinha.</p>
+
+  <div class="dores-grid">
+    <div class="dor-card fade-in">
+      <span class="dor-icon">😰</span>
+      <div>
+        <p>"Meu filho se distrai com tudo…"</p>
+        <small>Não consegue manter o foco por mais de 2 minutos em nada.</small>
+      </div>
+    </div>
+    <div class="dor-card fade-in">
+      <span class="dor-icon">😢</span>
+      <div>
+        <p>"Ele está ficando para trás na escola"</p>
+        <small>Dificuldade em aprender, escrever, acompanhar a turma.</small>
+      </div>
+    </div>
+    <div class="dor-card fade-in">
+      <span class="dor-icon">😤</span>
+      <div>
+        <p>"Todo dia termina em grito"</p>
+        <small>Você já tentou de tudo e se sente exausta e impotente.</small>
+      </div>
+    </div>
+    <div class="dor-card fade-in">
+      <span class="dor-icon">📱</span>
+      <div>
+        <p>"Só para na tela do celular"</p>
+        <small>Sem o celular ele não sabe o que fazer e isso te preocupa.</small>
+      </div>
+    </div>
+    <div class="dor-card fade-in">
+      <span class="dor-icon">😔</span>
+      <div>
+        <p>"Me sinto uma mãe ruim"</p>
+        <small>Por não saber como ajudar o desenvolvimento dele da forma certa.</small>
+      </div>
+    </div>
+    <div class="dor-card fade-in">
+      <span class="dor-icon">🙅‍♀️</span>
+      <div>
+        <p>"Já tentei de tudo e nada funciona"</p>
+        <small>Atividades soltas sem método não geram resultado consistente.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="frase-gancho fade-in">
+    Esses problemas não desaparecem sozinhos.<br>
+    <span>Quando não trabalhados cedo, podem impactar a autoestima, o aprendizado e o futuro escolar do seu filho.</span>
+  </div>
+</section>
+
+
+<!-- BLOCO 3 · SOLUÇÃO -->
+<section id="solucao">
+  <div class="section-label">A solução</div>
+  <h2 class="title fade-in">Simples de aplicar,<br><span>poderoso nos resultados</span></h2>
+  <p class="subtitle fade-in">O Guia de Atividades Motoras funciona porque é feito para a rotina real das mães. Sem complicação, sem especialista e sem materiais caros.</p>
+
+  <div class="steps">
+    <div class="step fade-in">
+      <span class="step-icon">⏱️</span>
+      <strong>Só 10 min por dia</strong>
+      <p>Antes do banho, depois do almoço. Cabe em qualquer rotina.</p>
+    </div>
+    <div class="step fade-in">
+      <span class="step-icon">🏠</span>
+      <strong>Pode fazer em casa</strong>
+      <p>Sem precisar de especialista ou sair de casa.</p>
+    </div>
+    <div class="step fade-in">
+      <span class="step-icon">🎲</span>
+      <strong>Atividades lúdicas</strong>
+      <p>Parecem brincadeira. Seu filho vai pedir para fazer todo dia.</p>
+    </div>
+    <div class="step fade-in">
+      <span class="step-icon">📈</span>
+      <strong>Progressão gradual</strong>
+      <p>Do iniciante ao avançado. Evolução contínua e visível.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOCO 4 · PROVA SOCIAL -->
+<section id="prova">
+  <div class="section-label">Resultados reais</div>
+  <h2 class="title fade-in">O que as mães estão<br><span>percebendo em seus filhos</span></h2>
+  <p class="subtitle fade-in">Veja o depoimento de uma mãe que já colocou o guia em prática.</p>
+
+  <div class="numeros">
+    <div class="num-item fade-in">
+      <strong>20k+</strong>
+      <span>Famílias atendidas</span>
+    </div>
+    <div class="num-item fade-in">
+      <strong>250+</strong>
+      <span>Atividades prontas</span>
+    </div>
+    <div class="num-item fade-in">
+      <strong>10min</strong>
+      <span>Por dia é suficiente</span>
+    </div>
+    <div class="num-item fade-in">
+      <strong>7 dias</strong>
+      <span>Garantia total</span>
+    </div>
+  </div>
+
+  <div class="dep-video-wrap fade-in">
+    <iframe src="https://player.vimeo.com/video/1181422852?h=396f4c329a&autoplay=0&title=0&byline=0&portrait=0" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
+  </div>
+  <p class="dep-video-label fade-in">Ana Paula — Mãe do Gabriel, 9 anos</p>
+</section>
+
+
+<!-- BLOCO 5 · OFERTA -->
+<section id="oferta">
+  <div class="section-label" style="background:rgba(255,255,255,0.15);color:#FFD54F;">🔥 Oferta especial</div>
+  <h2 class="title fade-in">Tudo que você recebe<br><span>hoje por R$67,00</span></h2>
+  <p class="subtitle fade-in">Invista menos que um lanche para transformar o desenvolvimento do seu filho para sempre.</p>
+
+  <img src="https://raw.githubusercontent.com/guiadeatividadesmotoras/kids/main/ChatGPT%20Image%2019%20de%20mai.%20de%202026%2C%2016_23_23.png" alt="Guia de Atividades Motoras" class="produto-img fade-in" />
+
+  <ul class="incluso-list fade-in">
+    <li><span class="check">✅</span> <span><strong>Guia Completo Digital</strong> com +250 atividades para Foco e Coordenação Infantil</span></li>
+    <li><span class="check">✅</span> <span><strong>Atividades práticas por faixa etária</strong> (3 a 10 anos) com instruções detalhadas e fácil navegação</span></li>
+    <li><span class="check">✅</span> <span><strong>Exercícios de coordenação motora fina e grossa</strong>, foco, atenção e organização de forma lúdica e divertida</span></li>
+    <li><span class="check">✅</span> <span><strong>Progressão gradual com níveis</strong> (iniciante, intermediário e avançado) para a evolução contínua da criança</span></li>
+    <li><span class="check">✅</span> <span><strong>Atividades simples</strong> usando apenas itens que você já tem em casa. Sem comprar nada extra.</span></li>
+    <li><span class="check">✅</span> <span><strong>Acesso imediato</strong> via WhatsApp e e-mail após a confirmação do pagamento</span></li>
+  </ul>
+
+  <div class="urgencia fade-in">
+    ⚡ Preço promocional por tempo limitado. Pode sair do ar a qualquer momento.
+  </div>
+
+  <div class="preco-box fade-in">
+    <p class="preco-de">De R$147,00</p>
+    <p class="preco-por">R$67,00</p>
+    <p class="preco-parcela">ou em até <strong>12x no cartão</strong> · Pagamento 100% seguro</p>
+  </div>
+
+  <a href="https://ggcheckout.app/checkout/v5/zbadjKm007EiXZc9E389" class="btn-cta pulse fade-in">
+    🛒 QUERO O GUIA AGORA
+    <span class="btn-sub">Acesso imediato · Garantia de 7 dias</span>
+  </a>
+
+  <div class="garantia fade-in">
+    <span class="g-icon">🛡️</span>
+    <strong>Garantia Incondicional de 7 Dias</strong>
+    <p>Teste o guia completo por 7 dias. Se por qualquer motivo não gostar, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. Você não tem nada a perder.</p>
+  </div>
+
+  <div class="selos fade-in">
+    <span class="selo">🔒 Pagamento Seguro</span>
+    <span class="selo">📱 Acesso pelo Celular</span>
+    <span class="selo">♾️ Acesso Vitalício</span>
+  </div>
+</section>
+
+
+<!-- BLOCO 6 · CTA FINAL -->
+<section id="cta-final">
+  <div class="section-label">Hora de agir</div>
+  <h2 class="title fade-in">Você chegou até aqui<br><span>porque quer o melhor para ele.</span></h2>
+
+  <p class="cta-frase fade-in">
+    Seu filho merece uma chance real de desenvolver o foco e a coordenação que ele precisa.<br>
+    <strong>E você merece ter uma ferramenta que realmente funciona.</strong>
+  </p>
+
+  <a href="https://ggcheckout.app/checkout/v5/zbadjKm007EiXZc9E389" class="btn-cta pulse fade-in" style="font-size:1.15rem;padding:20px 24px;">
+    🧡 Quero começar agora
+    <span class="btn-sub">R$67,00 · Acesso imediato · Garantia de 7 dias</span>
+  </a>
+
+  <p class="fade-in" style="font-size:0.8rem;color:#999;margin-top:18px;">
+    🔒 Compra 100% segura e protegida
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Guia de Atividades para Foco e Coordenação Infantil. Todos os direitos reservados.</p>
+  <p style="margin-top:6px;">Este produto é um guia digital para fins educacionais. Não substitui avaliação médica ou psicológica especializada.</p>
+</footer>
+
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in, .dor-card, .step, .num-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.dores-grid .dor-card').forEach((el, i) => {
+    el.style.transitionDelay = (i * 80) + 'ms';
+  });
+  document.querySelectorAll('.steps .step').forEach((el, i) => {
+    el.style.transitionDelay = (i * 80) + 'ms';
+  });
+  document.querySelectorAll('.numeros .num-item').forEach((el, i) => {
+    el.style.transitionDelay = (i * 80) + 'ms';
+  });
+</script>
+
+</body>
+</html>
